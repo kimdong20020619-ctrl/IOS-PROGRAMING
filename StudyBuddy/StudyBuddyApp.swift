@@ -1,11 +1,5 @@
-//
-//  StudyBuddyApp.swift
-//  StudyBuddy
-//
-//  Created by 김동우 on 11/4/26.
-//
-
 import SwiftUI
+import SwiftData
 
 @main
 struct StudyBuddyApp: App {
@@ -13,5 +7,8 @@ struct StudyBuddyApp: App {
         WindowGroup {
             ContentView()
         }
+        // Account와 Subscription 두 모델을 SwiftData로 관리
+        // Account → Subscription 관계가 있으므로 둘 다 등록
+        .modelContainer(for: [Account.self, Subscription.self])
     }
 }
